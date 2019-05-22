@@ -1,0 +1,93 @@
+<html> 
+   <head> 
+      <script> 
+	     function add(){
+		 var a,b,c;
+		 a=Number(document.getElementById("ManH").value);
+		 b=Number(document.getElementById("BOH").value);
+		 c= a + b;
+		 document.getElementById("answer").value= c;
+		 }
+         //function that display value 
+         function dis(val) 
+         { 
+             document.getElementById("result").value+=val 
+         } 
+           
+         //function that evaluates the digit and return result 
+         function solve() 
+         { 
+             let x = document.getElementById("result").value 
+             let y = eval(x) 
+             document.getElementById("result").value = y 
+         } 
+           
+         //function that clear the display 
+         function clr_ManH() 
+         { 
+             document.getElementById("ManH").value = "" 
+         } 
+		 function clr_BOH() 
+         { 
+             document.getElementById("BOH").value = "" 
+         }
+		 function clr_Sales() 
+         { 
+             document.getElementById("Sales").value = "" 
+         }
+      </script> 
+      <!-- for styling -->
+      <style> 
+         .title{ 
+         margin-bottom: 10px; 
+         text-align:center; 
+         width: 210px; 
+         color:green; 
+         border: solid black 2px; 
+         } 
+  
+         input[type="button"] 
+         { 
+         background-color:yellow; 
+         color: black; 
+         border: solid black 2px; 
+         width:100% 
+         } 
+  
+         input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         width:100% 
+         } 
+      </style> 
+   </head> 
+   <!-- create table -->
+   <body> 
+      <div class = title >JOEY Logout Calculator</div> 
+      <table border="1"> 
+         <tr> 
+		    <td><input type="button" value="ManH" />
+            <td colspan="3"><input type="number" id="ManH"/></td> 
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr_ManH()"/> </td> 
+         </tr> 
+         <tr> 
+		 <td>
+		    <input type="button" value="BOH" /> 
+            <td colspan="3"><input type="number" id="BOH"/></td> 
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr_BOH()"/> </td>  
+         </tr> 
+         <tr> 
+		    <td><input type="button" value="Sales" /> </td>
+            <td colspan="3"><input type="number" id="Sales"/></td> 
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr_Sales()"/> </td>  
+         </tr> 
+         <td><button onclick="add()">Add</button></td>
+		 <td><input id="answer"> </td>
+         
+      </table> 
+   </body> 
+</html> 
